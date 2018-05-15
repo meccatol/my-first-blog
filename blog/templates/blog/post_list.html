@@ -13,12 +13,12 @@
         function myFunction() {
             try {
               webkit.messageHandlers.callbackHandler.postMessage("MessageBody")
+              document.getElementById("demo").innerHTML = "Paragraph changed.";
             } catch (e) {
               alter(err)
             } finally {
 
             }
-            // document.getElementById("demo").innerHTML = "Paragraph changed.";
         }
         </script>
     </head>
