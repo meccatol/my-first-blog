@@ -6,13 +6,13 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-
-        <script src="/public/js/jquery-3.1.1.js"></script>
+        
         <script type="text/javascript" charset="UTF-8"></script>
         <script>
         function myFunction() {
             try {
               webkit.messageHandlers.callbackHandler.postMessage("MessageBody")
+              // 'callbackHandler' 가 WKScriptMessage의 name이고, postMessage에 전달되는것이 body다.
               document.getElementById("demo").innerHTML = "Paragraph changed.";
             } catch (e) {
               alter(err)
