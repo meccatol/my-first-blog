@@ -6,6 +6,21 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+        <script src="/public/js/jquery-3.1.1.js"></script>
+        <script type="text/javascript" charset="UTF-8"></script>
+        <script>
+        function myFunction() {
+            try {
+              webkit.messageHandlers.callbackHandler.postMessage("MessageBody")
+            } catch (e) {
+              alter(err)
+            } finally {
+
+            }
+            // document.getElementById("demo").innerHTML = "Paragraph changed.";
+        }
+        </script>
     </head>
     <body>
         <div class="page-header">
@@ -18,12 +33,6 @@
 
         <button type="button" onclick="myFunction()">Try it</button>
 
-        <script>
-        function myFunction() {
-            document.getElementById("demo").innerHTML = "Paragraph changed.";
-        }
-        </script>
-        
         <!-- {% for post in posts %}
           <div class="post">
             <p>published: {{ post.published_date }}</p>
