@@ -12,6 +12,18 @@
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
+        <h2>JavaScript in Body</h2>
+
+        <p id="demo">A Paragraph.</p>
+
+        <button type="button" onclick="myFunction()">Try it</button>
+
+        <script>
+        function myFunction() {
+            document.getElementById("demo").innerHTML = "Paragraph changed.";
+        }
+        </script>
+        
         <!-- {% for post in posts %}
           <div class="post">
             <p>published: {{ post.published_date }}</p>
