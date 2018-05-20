@@ -1,0 +1,55 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+        <script type="text/javascript" charset="UTF-8"></script>
+        <script>
+        function myFunction() {
+            try {
+              webkit.messageHandlers.callbackHandler.postMessage("MessageBody")
+              // 'callbackHandler' 가 WKScriptMessage의 name이고, postMessage에 전달되는것이 body다.
+              document.getElementById("demo").innerHTML = "Paragraph changed.";
+            } catch (e) {
+              alter(err)
+            } finally {
+
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <div class="page-header">
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+
+        <h2>JavaScript in Body</h2>
+
+        <p id="demo">A Paragraph.</p>
+
+        <button type="button" onclick="myFunction()">Try it</button>
+
+        <!-- {% for post in posts %}
+          <div class="post">
+            <p>published: {{ post.published_date }}</p>
+            <h3><a href="">{{ post.title }}</a></h3>
+            <p>{{ post.text|linebreaksbr }}</p>
+          </div>
+        {% endfor %} -->
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                  {% block content %}
+                  {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
