@@ -23,6 +23,14 @@
         </script>
     </head>
     <body>
+{#        <img src="{% static "bg_sky.JPG" %}" alt="My image">#}
+        <ul>
+          <li><a href="default.asp">Home</a></li>
+          <li><a href="news.asp">News</a></li>
+          <li><a href="contact.asp">Contact</a></li>
+          <li><a href="about.asp">About</a></li>
+        </ul>
+
         <div class="page-header">
             {% if user.is_authenticated %}
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
